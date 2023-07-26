@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>Scanner un produit</title>
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+    </header>
+
+    <div class="container">
+        <h1>Scanner un produit</h1>
+        <label for="liste-produits">Produits </label>
+        <select  id="liste-produits" class="form-select">
+          {% for produit in product %}
+            <option>{{ produit.num }}</option>
+          {% endfor %}                            
+        </select>
+        <div class="mb-3 select-with-button">
+          <label>Code serie </label>
+          <input type="text"  id="code" value="{{ serie }}" readonly>
+        </div>
+        <button onclick="submit()" class="btn btn-primary">Valider</button>       
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
